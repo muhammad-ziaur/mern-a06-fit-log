@@ -2,7 +2,7 @@ import React from "react";
 
 const MyPlanPage = () => {
   return (
-    <div className="bg-global-background text-global-text">
+    <div className="text-global-text bg-global-background">
       My Plan Page Dummy
     </div>
   );

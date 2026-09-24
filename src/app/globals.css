@@ -3,5 +3,10 @@
 @theme {
   --color-global-background: rgba(12, 13, 16, 0.95); /* 0C0D10 95% */
   --color-global-text: #ffffff;
-  --color-navbar-bottom: #1c1f26;
+  /* --color-global-border: #222630; */
+  --color-global-border: #1c1f26;
+  /* --color-global-border: #20242e; */
+  --color-global-subtitle: #9ca3af;
+  --color-muscle-group: #c2f800;
+  --color-card-background: #20242e;
 }

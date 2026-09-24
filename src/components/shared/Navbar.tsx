@@ -4,14 +4,16 @@ import logo from "@/assets/logo.png";
 import Link from "next/link";
 const Navbar = () => {
   return (
-    <div className="bg-global-background py-6 border-b-2 border-navbar-bottom">
+    <div className="sticky top-0 z-50 py-6 border-b-2 border-global-border bg-global-background">
       <nav className="container mx-auto flex justify-between items-center">
         {/* Navbar Left Logo */}
         <Link href={process.env.NEXT_PUBLIC_SERVER_BASE_URL!}>
           <div className="flex gap-3 items-center cursor-pointer">
             <Image src={logo} alt="Navbar logo"></Image>
-            <div className="text-2xl font-semibold text-global-text">
-              FITLOG
+            <div>
+              <p className="text-2xl font-semibold text-global-text uppercase">
+                FITLOG
+              </p>
             </div>
           </div>
         </Link>
