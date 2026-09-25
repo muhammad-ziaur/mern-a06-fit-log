@@ -5,6 +5,10 @@ import { MyPlan } from "@/types/myplanpagetab.type";
 import React, { createContext, ReactNode, useState } from "react";
 
 export const ExercisesContext = createContext<IExercisesContext>({
+  insideHomePage: false,
+  setInsideHomePage: () => {},
+  insideMyPlanPage: false,
+  setInsideMyPlanPage: () => {},
   currentPlanType: "plan",
   setCurrentPlanType: () => {},
   plannedExercises: [],
@@ -14,11 +18,17 @@ export const ExercisesContext = createContext<IExercisesContext>({
 });
 
 const ExercisesProvider = ({ children }: { children: ReactNode }) => {
+  const [insideHomePage, setInsideHomePage] = useState<boolean>(false);
+  const [insideMyPlanPage, setInsideMyPlanPage] = useState<boolean>(false);
   const [currentPlanType, setCurrentPlanType] = useState<MyPlan>("plan");
   const [plannedExercises, setPlannedExercises] = useState<IExercise[]>([]);
   const [savedExercises, setSavedExercises] = useState<IExercise[]>([]);
   // console.log("The ENTIRE APP started within ExercisesContext");
   const sharedData = {
+    insideHomePage,
+    setInsideHomePage,
+    insideMyPlanPage,
+    setInsideMyPlanPage,
     currentPlanType,
     setCurrentPlanType,
     plannedExercises,

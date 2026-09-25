@@ -1,6 +1,7 @@
 import Metrics from "@/components/myplanpage/Metrics";
 import MyPlanTitle from "@/components/myplanpage/MyPlanTitle";
 import SelectedExercises from "@/components/myplanpage/selectedexercises/SelectedExercises";
+import ToggleAndSort from "@/components/myplanpage/toggleandsort/ToggleAndSort";
 import React from "react";
 
 const MyPlanPage = () => {
@@ -9,6 +10,7 @@ const MyPlanPage = () => {
       <main className="container mx-auto">
         <MyPlanTitle />
         <Metrics />
+        <ToggleAndSort />
         <SelectedExercises />
       </main>
     </div>
