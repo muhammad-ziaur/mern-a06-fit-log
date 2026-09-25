@@ -1,8 +1,8 @@
 import { IExercise } from "@/types/exercise.type";
-import { FaRegCalendarPlus } from "react-icons/fa6";
-import { FaRegBookmark } from "react-icons/fa";
 import React from "react";
 import Image from "next/image";
+import PlanExerciseButton from "@/components/exercisedetails/PlanExerciseButton";
+import SaveExerciseButton from "@/components/exercisedetails/SaveExerciseButton";
 interface IExerciseDetailsPageProps {
   params: Promise<{
     id: string;
@@ -123,22 +123,9 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
             )}
           </div>
           <div className="flex gap-5 mt-8">
-            <button className="cursor-pointer text-details-button-one bg-button-primary font-semibold flex justify-center items-center gap-2 rounded-xl px-6 py-3">
-              <span className="">
-                <FaRegCalendarPlus />
-              </span>
-              <p>
-                <span>{`Add to today's plan`}</span>
-              </p>
-            </button>
-            <button className="cursor-pointer text-details-button-two border border-details-button-two font-semibold flex justify-center items-center gap-2 rounded-xl px-6 py-3">
-              <span>
-                <FaRegBookmark />
-              </span>
-              <p>
-                <span>{`Save for later`}</span>
-              </p>
-            </button>
+            {/* Cutsom Button Components */}
+            <PlanExerciseButton exercise={ExerciseDetailsData} />
+            <SaveExerciseButton exercise={ExerciseDetailsData} />
           </div>
         </div>
       </section>
