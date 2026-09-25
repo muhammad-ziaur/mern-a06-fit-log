@@ -9,9 +9,10 @@ interface IExerciseCardProp {
   exercise: IExercise;
 }
 const ExerciseCard = ({ exercise }: IExerciseCardProp) => {
+  // console.log(exercise.id);
   return (
     <Link
-      href={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL!}/my-plan`}
+      href={`/exercisedetails/${exercise.id}`}
       className="col-span-4 cursor-pointer rounded-2xl border border-global-subtitle hover:border-muscle-group hover:shadow-lg hover:shadow-amber-400 hover:-translate-y-1.5 active:translate-y-1.5 transition-all bg-card-background flex flex-col overflow-hidden w-full h-auto"
     >
       <div className="relative w-full aspect-video">
@@ -20,6 +21,7 @@ const ExerciseCard = ({ exercise }: IExerciseCardProp) => {
           src={exercise.image}
           alt="Exercise Card Image"
           fill
+          sizes="33vw"
         />
       </div>
 
@@ -32,6 +34,7 @@ const ExerciseCard = ({ exercise }: IExerciseCardProp) => {
           );
         })}
       </div>
+
       <div className="pt-4 px-6">
         <p className="text-global-text text-2xl font-bold uppercase">
           {exercise.name}

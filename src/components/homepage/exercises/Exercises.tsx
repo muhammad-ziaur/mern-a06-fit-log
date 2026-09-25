@@ -2,7 +2,7 @@ import ExerciseCard from "@/components/homepage/exercises/ExerciseCard";
 import { IExercise } from "@/types/exercise.type";
 import React from "react";
 
-const getExercises = async () => {
+const getExercises = async (): Promise<IExercise[]> => {
   try {
     const response = await fetch("https://api.abcz.workers.dev/api/fitlog", {
       cache: "force-cache",
