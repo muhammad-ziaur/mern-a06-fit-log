@@ -15,15 +15,10 @@ const CloseSymbol = ({ commonExercise }: ICloseSymbolProps) => {
     setSavedExercises,
   } = useContext(ExercisesContext);
   const handleCloseSymbol = () => {
-    let commonExercises: IExercise[];
-    let setCommonExercises: Dispatch<SetStateAction<IExercise[]>>;
-    if (currentPlanType === "plan") {
-      commonExercises = plannedExercises;
-      setCommonExercises = setPlannedExercises;
-    } else {
-      commonExercises = savedExercises;
-      setCommonExercises = setSavedExercises;
-    }
+    const commonExercises: IExercise[] =
+      currentPlanType === "plan" ? plannedExercises : savedExercises;
+    const setCommonExercises: Dispatch<SetStateAction<IExercise[]>> =
+      currentPlanType === "plan" ? setPlannedExercises : setSavedExercises;
     const decrementedCommonExercises: IExercise[] = commonExercises.filter(
       (elem: IExercise) => elem.id !== commonExercise.id,
     );

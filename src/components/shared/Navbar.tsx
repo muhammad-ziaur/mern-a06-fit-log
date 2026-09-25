@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
+import NavbarPlanButton from "./navbarbuttons/NavbarPlanButton";
+import NavbarSavedButton from "./navbarbuttons/NavbarSavedButton";
 const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 py-6 border-b-2 border-global-border bg-global-background">
@@ -39,23 +41,9 @@ const Navbar = () => {
           </ul>
         </div>
         {/* Navbar Right Buttons */}
-        <div className="flex justify-between items-center gap-4">
-          <button className="rounded-full border-0">
-            <Link
-              href={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL!}/my-plan`}
-              className="text-global-text"
-            >
-              Plan
-            </Link>
-          </button>
-          <button className="rounded-full border-0">
-            <Link
-              href={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL!}/my-plan`}
-              className="text-global-text"
-            >
-              Saved
-            </Link>
-          </button>
+        <div className="flex justify-between items-center gap-2.5">
+          <NavbarPlanButton />
+          <NavbarSavedButton />
         </div>
       </nav>
     </div>
