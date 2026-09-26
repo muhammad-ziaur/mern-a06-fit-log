@@ -3,6 +3,7 @@ import { ExercisesContext } from "@/context/ExercisesContext";
 import { IExercise } from "@/types/exercise.type";
 import React, { useContext } from "react";
 import { FaRegBookmark } from "react-icons/fa";
+import { Slide, toast } from "react-toastify";
 interface ISaveExerciseButtonProps {
   exercise: IExercise;
 }
@@ -19,10 +20,32 @@ const SaveExerciseButton = ({ exercise }: ISaveExerciseButtonProps) => {
         exercise,
       ];
       setSavedExercises(incrementedSavedExercises);
-      //TOAST LATER
+      //TOAST
+      toast.success(`${exercise.name} has been added to your SAVED list!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      });
     } else {
       //already saved
-      //TOAST LATER
+      //TOAST
+      toast.error(`${exercise.name} already exists in your SAVED list!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      });
     }
   };
   return (

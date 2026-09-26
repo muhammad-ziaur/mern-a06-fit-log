@@ -2,6 +2,7 @@ import { ExercisesContext } from "@/context/ExercisesContext";
 import { IExercise } from "@/types/exercise.type";
 import React, { useContext } from "react";
 import { MdDone } from "react-icons/md";
+import { Slide, toast } from "react-toastify";
 
 interface IMarkAsDoneButtonProps {
   plannedExercise: IExercise;
@@ -16,6 +17,21 @@ const MarkAsDoneButton = ({ plannedExercise }: IMarkAsDoneButtonProps) => {
       (elem: IExercise) => elem.id !== plannedExercise.id,
     );
     setPlannedExercises(decrementedPlannedExercises);
+    //TOAST
+    toast.success(
+      `Congratulations! ${plannedExercise.name} is DONE for today. Good Job!`,
+      {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      },
+    );
   };
 
   return (
