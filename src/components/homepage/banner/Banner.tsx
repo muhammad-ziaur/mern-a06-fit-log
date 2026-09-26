@@ -35,6 +35,7 @@ const Banner = () => {
             className="object-cover object-center rounded-2xl w-full h-full"
             height={400}
             width={400}
+            loading="eager"
           ></Image>
         </div>
       </section>

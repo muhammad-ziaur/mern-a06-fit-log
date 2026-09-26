@@ -19,7 +19,7 @@ const NotFound = () => {
         </div>
 
         <div className="mt-4">
-          <Link href={process.env.NEXT_PUBLIC_SERVER_BASE_URL!}>
+          <Link href="/">
             <button className="cursor-pointer px-8 py-3 rounded-full bg-button-primary text-details-button-one font-semibold shadow-lg hover:-translate-y-0.5 active:translate-y-0.5 hover:font-bold transition-all">
               Back to Workouts
             </button>

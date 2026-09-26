@@ -21,6 +21,7 @@ const ExerciseCard = ({ exercise }: IExerciseCardProp) => {
           className="object-cover object-center"
           src={exercise.image}
           alt="Exercise Card Image"
+          loading="eager"
           fill
           sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 33vw"
         />

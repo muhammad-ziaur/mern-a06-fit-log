@@ -16,10 +16,7 @@ const NavbarPlanButton = () => {
     setInsideHomePage(false);
   };
   return (
-    <Link
-      href={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL!}/my-plan`}
-      onClick={handleNavbarPlanButton}
-    >
+    <Link href="/my-plan" onClick={handleNavbarPlanButton}>
       <button className="flex cursor-pointer items-center justify-center gap-1.5 rounded-full border-0 px-5 py-2.5 font-semibold  hover:bg-hero-background transition-all duration-200">
         <span className="text-white">Plan</span>
 

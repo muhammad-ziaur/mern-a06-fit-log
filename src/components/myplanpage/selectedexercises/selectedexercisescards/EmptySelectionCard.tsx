@@ -16,7 +16,7 @@ const EmptySelectionCard = () => {
           Browse the library and add a lift to get today moving.
         </p>
         <Link
-          href={process.env.NEXT_PUBLIC_SERVER_BASE_URL!}
+          href="/"
           onClick={() => {
             setInsideHomePage(true);
             setInsideMyPlanPage(false);

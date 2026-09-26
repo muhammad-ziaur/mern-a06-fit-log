@@ -16,10 +16,7 @@ const NavbarSavedButton = () => {
     setInsideHomePage(false);
   };
   return (
-    <Link
-      href={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL!}/my-plan`}
-      onClick={handleNavbarSavedButton}
-    >
+    <Link href="/my-plan" onClick={handleNavbarSavedButton}>
       <button className="flex cursor-pointer items-center justify-center gap-1.5 rounded-full border-0 px-5 py-2.5 font-semibold text-details-button-two  hover:bg-hero-background transition-all duration-200">
         <span className="text-global-subtitle">Saved</span>
 

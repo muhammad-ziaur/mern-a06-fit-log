@@ -41,6 +41,7 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
               alt="Exercise Details Image"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="eager"
             />
           </div>
         </div>

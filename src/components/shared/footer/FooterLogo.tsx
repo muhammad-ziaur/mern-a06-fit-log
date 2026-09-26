@@ -10,7 +10,7 @@ const FooterLogo = () => {
     useContext(ExercisesContext);
   return (
     <Link
-      href={process.env.NEXT_PUBLIC_SERVER_BASE_URL!}
+      href="/"
       onClick={() => {
         setInsideMyPlanPage(false);
         setInsideHomePage(true);

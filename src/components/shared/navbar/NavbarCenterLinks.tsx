@@ -44,7 +44,7 @@ const NavbarCenterLinks = ({ isMobile = false }: { isMobile?: boolean }) => {
       }
     >
       <Link
-        href={process.env.NEXT_PUBLIC_SERVER_BASE_URL!}
+        href="/"
         onClick={() => handleLinkClick(true)}
         className={`flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 ${
           insideHomePage === true
@@ -56,7 +56,7 @@ const NavbarCenterLinks = ({ isMobile = false }: { isMobile?: boolean }) => {
       </Link>
 
       <Link
-        href={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL!}/my-plan`}
+        href="/my-plan"
         onClick={() => handleLinkClick(false)}
         className={`flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 ${
           insideMyPlanPage === true
