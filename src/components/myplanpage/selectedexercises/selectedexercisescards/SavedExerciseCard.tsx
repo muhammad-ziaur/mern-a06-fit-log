@@ -34,19 +34,19 @@ const SavedExerciseCard = ({ savedExercise }: ISavedExerciseCardProps) => {
 
           <div className=" whitespace-nowrap text-global-subtitle text-xl font-semibold mx-6 mt-5 pt-3 pb-6 flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <span>
+              <span className="text-muscle-group">
                 <FaRegClock />
               </span>
               <p>{savedExercise.duration + " "}min</p>
             </div>
             <div className="flex items-center gap-2">
-              <span>
+              <span className="text-muscle-group">
                 <TbFlameFilled />
               </span>
               <p>{savedExercise.caloriesBurned + " "}kcal</p>
             </div>
             <div className="flex items-center gap-2">
-              <span>
+              <span className="text-muscle-group">
                 <FaRegStar />
               </span>
               <p>{savedExercise.rating}</p>

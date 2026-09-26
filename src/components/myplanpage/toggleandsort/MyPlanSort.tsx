@@ -36,7 +36,7 @@ const MyPlanSort = () => {
                 className={`cursor-pointer transition-all duration-200  w-full text-left px-4 py-2 rounded-xl text-sm ${
                   sortBy === criterion
                     ? "text-white  bg-hero-background font-semibold"
-                    : "text-global-subtitle   hover:bg-global-background  hover:text-button-primary"
+                    : "text-global-subtitle  font-semibold hover:bg-global-background  hover:text-button-primary"
                 }`}
               >
                 {criterion}

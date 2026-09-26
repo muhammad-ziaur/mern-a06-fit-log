@@ -12,7 +12,7 @@ const Navbar = () => {
         {/* Navbar Central Links */}
         <NavbarCenterLinks />
         {/* Navbar Right Buttons */}
-        <div className="flex justify-between items-center gap-2.5">
+        <div className="flex justify-between items-center gap-1">
           <NavbarPlanButton />
           <NavbarSavedButton />
         </div>
