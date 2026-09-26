@@ -19,7 +19,6 @@ const SavedExerciseCard = ({ savedExercise }: ISavedExerciseCardProps) => {
             className="object-cover object-center"
             src={savedExercise.image}
             alt="Exercise Card Image"
-            loading="eager"
             fill
             sizes="(max-width: 640px) 100vw, 20vw"
           />

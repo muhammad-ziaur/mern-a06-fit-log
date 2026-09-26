@@ -14,9 +14,7 @@ const getExerciseDetails = async (id: string) => {
   try {
     const response = await fetch(
       `https://api.abcz.workers.dev/api/fitlog/${id}`,
-      {
-        cache: "force-cache",
-      },
+      { cache: "force-cache" },
     );
     const data = await response.json();
     return data;
@@ -41,7 +39,6 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
               alt="Exercise Details Image"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              loading="eager"
             />
           </div>
         </div>

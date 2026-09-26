@@ -22,7 +22,6 @@ const PlannedExerciseCard = ({
             src={plannedExercise.image}
             alt="Exercise Card Image"
             fill
-            loading="eager"
             sizes="(max-width: 640px) 100vw, 20vw"
           />
         </div>
