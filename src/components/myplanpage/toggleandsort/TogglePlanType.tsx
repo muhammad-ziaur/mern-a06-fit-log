@@ -11,14 +11,14 @@ const TogglePlanType = () => {
     setInsideMyPlanPage,
   } = useContext(ExercisesContext);
   return (
-    <section className="flex gap-1 justify-between rounded-2xl border-2 border-hero-background bg-hero-background">
+    <section className="flex gap-1 justify-between rounded-2xl border-2 border-hero-background bg-hero-background w-full sm:w-auto">
       <div
         onClick={() => {
           setCurrentPlanType("plan");
           setInsideMyPlanPage(true);
           setInsideHomePage(false);
         }}
-        className={`flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 ${
+        className={`flex-1 sm:flex-initial flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 text-sm sm:text-base ${
           currentPlanType === "plan"
             ? "bg-black text-button-primary shadow-sm"
             : "text-global-subtitle hover:text-white"
@@ -33,7 +33,7 @@ const TogglePlanType = () => {
           setInsideMyPlanPage(true);
           setInsideHomePage(false);
         }}
-        className={`flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 ${
+        className={`flex-1 sm:flex-initial flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 text-sm sm:text-base ${
           currentPlanType === "saved"
             ? "bg-black text-button-primary shadow-sm"
             : "text-global-subtitle hover:text-white"

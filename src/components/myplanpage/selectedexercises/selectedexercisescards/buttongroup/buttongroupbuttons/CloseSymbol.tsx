@@ -3,9 +3,11 @@ import { ExercisesContext } from "@/context/ExercisesContext";
 import { IExercise } from "@/types/exercise.type";
 import React, { Dispatch, SetStateAction, useContext } from "react";
 import { IoMdClose } from "react-icons/io";
+
 interface ICloseSymbolProps {
   commonExercise: IExercise;
 }
+
 const CloseSymbol = ({ commonExercise }: ICloseSymbolProps) => {
   const {
     currentPlanType,
@@ -14,6 +16,7 @@ const CloseSymbol = ({ commonExercise }: ICloseSymbolProps) => {
     savedExercises,
     setSavedExercises,
   } = useContext(ExercisesContext);
+
   const handleCloseSymbol = () => {
     const commonExercises: IExercise[] =
       currentPlanType === "plan" ? plannedExercises : savedExercises;
@@ -24,9 +27,10 @@ const CloseSymbol = ({ commonExercise }: ICloseSymbolProps) => {
     );
     setCommonExercises(decrementedCommonExercises);
   };
+
   return (
     <div
-      className="cursor-pointer text-xl text-global-subtitle font-semibold hover:font-bold hover:text-white"
+      className="cursor-pointer text-lg sm:text-xl text-global-subtitle font-semibold hover:font-bold hover:text-white p-1"
       onClick={handleCloseSymbol}
     >
       <IoMdClose />

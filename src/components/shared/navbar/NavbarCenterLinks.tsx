@@ -1,20 +1,22 @@
 "use client";
 import { ExercisesContext } from "@/context/ExercisesContext";
+import { NavbarHamburgerContext } from "@/context/NavbarHamburgerContext";
 import Link from "next/link";
 import React, { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
-const NavbarCenterLinks = () => {
+
+const NavbarCenterLinks = ({ isMobile = false }: { isMobile?: boolean }) => {
   const {
     insideHomePage,
     insideMyPlanPage,
     setInsideHomePage,
     setInsideMyPlanPage,
   } = useContext(ExercisesContext);
+  const { setIsMenuOpen } = useContext(NavbarHamburgerContext);
 
   const pathName = usePathname();
 
   useEffect(() => {
-    // usePathname() returns only '/my-plan' or '/'
     if (pathName === "/my-plan") {
       setInsideMyPlanPage(true);
       setInsideHomePage(false);
@@ -27,14 +29,23 @@ const NavbarCenterLinks = () => {
     }
   }, [pathName, setInsideMyPlanPage, setInsideHomePage]);
 
+  const handleLinkClick = (isHome: boolean) => {
+    setInsideMyPlanPage(!isHome);
+    setInsideHomePage(isHome);
+    if (isMobile) setIsMenuOpen(false);
+  };
+
   return (
-    <section className="flex gap-1 justify-between">
+    <section
+      className={
+        isMobile
+          ? "flex flex-col gap-2 w-full"
+          : "hidden md:flex gap-1 justify-between"
+      }
+    >
       <Link
         href={process.env.NEXT_PUBLIC_SERVER_BASE_URL!}
-        onClick={() => {
-          setInsideMyPlanPage(false);
-          setInsideHomePage(true);
-        }}
+        onClick={() => handleLinkClick(true)}
         className={`flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 ${
           insideHomePage === true
             ? "bg-navbar-center-link-background text-muscle-group shadow-sm"
@@ -46,10 +57,7 @@ const NavbarCenterLinks = () => {
 
       <Link
         href={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL!}/my-plan`}
-        onClick={() => {
-          setInsideMyPlanPage(true);
-          setInsideHomePage(false);
-        }}
+        onClick={() => handleLinkClick(false)}
         className={`flex justify-center items-center px-4 py-2 rounded-2xl cursor-pointer transition-all duration-200 ${
           insideMyPlanPage === true
             ? "bg-navbar-center-link-background text-muscle-group shadow-sm"

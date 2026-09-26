@@ -13,13 +13,15 @@ const MyPlanSort = () => {
   };
 
   return (
-    <div className="relative text-left">
-      <div className="flex items-center gap-2 ">
-        <span className="font-semibold  text-global-subtitle">Sort By</span>
+    <div className="relative text-left w-full sm:w-auto flex justify-between sm:justify-start items-center">
+      <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-start">
+        <span className="font-semibold text-global-subtitle text-sm sm:text-base">
+          Sort By
+        </span>
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="cursor-pointer flex items-center gap-1 px-4 py-2 rounded-xl border-2 border-hero-background bg-hero-background  text-global-subtitle hover:text-white transition-all duration-200"
+          className="cursor-pointer flex items-center justify-between gap-1 px-4 py-2 rounded-xl border-2 border-hero-background bg-hero-background text-global-subtitle hover:text-white transition-all duration-200 text-sm sm:text-base min-w-32.5"
         >
           <span className="font-semibold">{sortBy}</span>
           {isOpen ? <FiChevronUp /> : <FiChevronDown />}
@@ -27,16 +29,16 @@ const MyPlanSort = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute right-0 mt-1 w-36 rounded-2xl border-2 border-hero-background bg-hero-background">
-          <div className="flex flex-col gap-1 p-1">
+        <div className="backdrop-blur-md absolute right-0 sm:right-0 top-full mt-2 w-full sm:w-40 rounded-2xl border border-neutral-700/80 bg-neutral-900/95 shadow-2xl shadow-black/70 z-50 p-1.5">
+          <div className="flex flex-col gap-1">
             {criteria.map((criterion) => (
               <button
                 key={criterion}
                 onClick={() => handleSelect(criterion)}
-                className={`cursor-pointer transition-all duration-200  w-full text-left px-4 py-2 rounded-xl text-sm ${
+                className={`cursor-pointer transition-all duration-200 w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium ${
                   sortBy === criterion
-                    ? "text-white  bg-hero-background font-semibold"
-                    : "text-global-subtitle  font-semibold hover:bg-global-background  hover:text-button-primary"
+                    ? "text-white bg-neutral-800 font-semibold shadow-inner"
+                    : "text-neutral-300 hover:bg-neutral-800/60 hover:text-white"
                 }`}
               >
                 {criterion}

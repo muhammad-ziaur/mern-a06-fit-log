@@ -13,7 +13,7 @@ const BannerButton = () => {
       className="cursor-pointer text-details-button-one bg-button-primary font-semibold rounded-xl px-6 py-3"
       onClick={scrollDownToLibraryTitleComponent}
     >
-      <p className="uppercase whitespace-nowrap font-bold">
+      <p className="uppercase font-bold">
         <span>{`BROWSE WORKOUTS`}</span>
       </p>
     </button>

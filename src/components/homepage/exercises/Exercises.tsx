@@ -21,7 +21,7 @@ const getExercises = async (): Promise<IExercise[]> => {
 const Exercises = async () => {
   const exercisesData = await getExercises();
   return (
-    <section className="mt-10 mb-50">
+    <section className="mt-10 mb-20 md:mb-50 px-4 sm:px-6 md:px-8 container mx-auto">
       {/* all exercises cards to be displayed */}
       <div className="grid grid-cols-12 gap-6">
         {exercisesData.map((exercise: IExercise) => {

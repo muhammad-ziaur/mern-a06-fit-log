@@ -5,34 +5,38 @@ import { FaRegClock } from "react-icons/fa6";
 import { TbFlameFilled } from "react-icons/tb";
 import { FaRegStar } from "react-icons/fa6";
 import ButtonGroup from "./buttongroup/ButtonGroup";
+
 interface ISavedExerciseCardProps {
   savedExercise: IExercise;
 }
+
 const SavedExerciseCard = ({ savedExercise }: ISavedExerciseCardProps) => {
   return (
-    <div className="container mx-auto px-8 py-3 cursor-pointer rounded-2xl border-2 border-hero-background hover:shadow-sm transition-all hover:shadow-global-subtitle bg-hero-background flex justify-between items-center">
-      <section className="flex justify-between items-center gap-2">
-        <div className="relative w-48 h-32 min-w-48 overflow-hidden rounded-2xl">
+    <div className="w-full cursor-pointer rounded-2xl border-2 border-hero-background hover:shadow-sm transition-all hover:shadow-global-subtitle bg-hero-background flex flex-col md:flex-row justify-between items-start md:items-center p-4 sm:p-6 gap-4 md:gap-6">
+      <section className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
+        <div className="relative w-full sm:w-48 h-48 sm:h-32 min-w-full sm:min-w-48 overflow-hidden rounded-xl sm:rounded-2xl">
           <Image
             className="object-cover object-center"
             src={savedExercise.image}
             alt="Exercise Card Image"
             fill
-            sizes="20vw"
+            sizes="(max-width: 640px) 100vw, 20vw"
           />
         </div>
-        <div className="flex flex-col">
-          <div className="pt-4 px-6">
-            <p className="text-global-text text-2xl font-bold uppercase">
+        <div className="flex flex-col w-full">
+          <div>
+            <p className="text-global-text text-xl sm:text-2xl font-bold uppercase">
               {savedExercise.name}
             </p>
           </div>
 
-          <div className="pt-1 px-6">
-            <p className="text-global-subtitle">{savedExercise.equipment}</p>
+          <div className="pt-1">
+            <p className="text-global-subtitle text-sm sm:text-base">
+              {savedExercise.equipment}
+            </p>
           </div>
 
-          <div className=" whitespace-nowrap text-global-subtitle text-xl font-semibold mx-6 mt-5 pt-3 pb-6 flex items-center gap-4">
+          <div className="whitespace-nowrap text-global-subtitle text-sm sm:text-xl font-semibold mt-4 sm:mt-5 pt-3 pb-2 sm:pb-6 flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <span className="text-muscle-group">
                 <FaRegClock />
@@ -55,7 +59,9 @@ const SavedExerciseCard = ({ savedExercise }: ISavedExerciseCardProps) => {
         </div>
       </section>
 
-      <ButtonGroup commonExercise={savedExercise} />
+      <div className="w-full md:w-auto flex justify-start md:justify-end">
+        <ButtonGroup commonExercise={savedExercise} />
+      </div>
     </div>
   );
 };
