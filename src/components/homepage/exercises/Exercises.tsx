@@ -4,9 +4,12 @@ import React from "react";
 
 const getExercises = async (): Promise<IExercise[]> => {
   try {
-    const response = await fetch("https://api.abcz.workers.dev/api/fitlog", {
-      cache: "force-cache",
-    });
+    const response = await fetch(
+      "https://api.api-store.workers.dev/api/fitlog",
+      {
+        cache: "force-cache",
+      },
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

@@ -13,7 +13,7 @@ interface IExerciseDetailsPageProps {
 const getExerciseDetails = async (id: string) => {
   try {
     const response = await fetch(
-      `https://api.abcz.workers.dev/api/fitlog/${id}`,
+      `https://api.api-store.workers.dev/api/fitlog/${id}`,
       { cache: "force-cache" },
     );
     const data = await response.json();
