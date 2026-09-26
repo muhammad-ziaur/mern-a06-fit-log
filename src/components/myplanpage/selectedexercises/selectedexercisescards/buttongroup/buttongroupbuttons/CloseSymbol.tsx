@@ -26,7 +26,7 @@ const CloseSymbol = ({ commonExercise }: ICloseSymbolProps) => {
   };
   return (
     <div
-      className="cursor-pointer text-global-subtitle font-semibold"
+      className="cursor-pointer text-xl text-global-subtitle font-semibold hover:font-bold hover:text-white"
       onClick={handleCloseSymbol}
     >
       <IoMdClose />

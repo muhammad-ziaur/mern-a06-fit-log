@@ -28,7 +28,7 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
   const ExerciseDetailsData: IExercise = await getExerciseDetails(id);
   // console.log(ExerciseDetailsData);
   return (
-    <div className="bg-global-background py-16">
+    <div className="bg-global-background mt-18 mb-36">
       <section className="container mx-auto grid grid-cols-12 gap-20">
         <div className="col-span-6 relative w-full">
           <Image

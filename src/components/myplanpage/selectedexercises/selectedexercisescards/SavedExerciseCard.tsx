@@ -10,7 +10,7 @@ interface ISavedExerciseCardProps {
 }
 const SavedExerciseCard = ({ savedExercise }: ISavedExerciseCardProps) => {
   return (
-    <div className="container mx-auto px-8 py-3 cursor-pointer rounded-2xl border border-global-subtitle hover:border-muscle-group hover:shadow-lg hover:shadow-amber-400  bg-hero-background flex justify-between items-center">
+    <div className="container mx-auto px-8 py-3 cursor-pointer rounded-2xl border-2 border-hero-background hover:shadow-sm transition-all hover:shadow-global-subtitle bg-hero-background flex justify-between items-center">
       <section className="flex justify-between items-center gap-2">
         <div className="relative w-48 h-32 min-w-48 overflow-hidden rounded-2xl">
           <Image

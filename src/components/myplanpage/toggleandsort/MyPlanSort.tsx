@@ -27,7 +27,7 @@ const MyPlanSort = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute right-0 mt-1 w-36 rounded-2xl border-2 border-hero-background bg-hero-background z-100">
+        <div className="absolute right-0 mt-1 w-36 rounded-2xl border-2 border-hero-background bg-hero-background">
           <div className="flex flex-col gap-1 p-1">
             {criteria.map((criterion) => (
               <button

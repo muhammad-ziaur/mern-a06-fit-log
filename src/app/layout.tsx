@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
 import ExercisesProvider from "@/context/ExercisesContext";
+import Footer from "@/components/shared/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ExercisesProvider>
           <Navbar />
           <div className="grow  bg-global-background">{children}</div>
-          <h2 className="mt-auto text-5xl py-7 font-bold text-center bg-cyan-600 text-red-600">
-            Dummy Footer
-          </h2>
+          <Footer />
         </ExercisesProvider>
       </body>
     </html>

@@ -38,7 +38,7 @@ const SelectedExercises = () => {
     currentPlanType === "plan" ? plannedExercises : savedExercises;
   const sortedExercises = sortExercises(currentExercises);
   return currentPlanType === "plan" ? (
-    <section className="mt-20 flex flex-col gap-4">
+    <section className="mt-20 mb-50 flex flex-col gap-5">
       {sortedExercises.length === 0 ? (
         <EmptySelectionCard />
       ) : (
@@ -53,7 +53,7 @@ const SelectedExercises = () => {
       )}
     </section>
   ) : (
-    <section className="mt-20 flex flex-col gap-4">
+    <section className="mt-20 mb-50 flex flex-col gap-5">
       {sortedExercises.length === 0 ? (
         <EmptySelectionCard />
       ) : (

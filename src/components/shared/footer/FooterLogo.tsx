@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import logo from "@/assets/logo.png";
 
-const NavbarLogo = () => {
+const FooterLogo = () => {
   const { setInsideHomePage, setInsideMyPlanPage } =
     useContext(ExercisesContext);
   return (
@@ -16,10 +16,10 @@ const NavbarLogo = () => {
         setInsideHomePage(true);
       }}
     >
-      <div className="flex gap-2 items-center cursor-pointer">
-        <Image src={logo} alt="Navbar logo" width={27} height={27}></Image>
+      <div className="flex gap-1.5 items-center cursor-pointer">
+        <Image src={logo} alt="Footer logo" width={22} height={22}></Image>
         <div>
-          <p className="text-3xl font-semibold text-global-text uppercase">
+          <p className="text-2xl font-semibold text-global-text uppercase">
             FITLOG
           </p>
         </div>
@@ -28,4 +28,4 @@ const NavbarLogo = () => {
   );
 };
 
-export default NavbarLogo;
+export default FooterLogo;

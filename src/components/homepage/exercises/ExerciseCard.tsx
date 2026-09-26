@@ -13,7 +13,7 @@ const ExerciseCard = ({ exercise }: IExerciseCardProp) => {
   return (
     <Link
       href={`/exercisedetails/${exercise.id}`}
-      className="col-span-4 cursor-pointer rounded-2xl border border-global-subtitle hover:border-muscle-group hover:shadow-lg hover:shadow-amber-400 hover:-translate-y-1.5 active:translate-y-1.5 transition-all bg-card-background flex flex-col overflow-hidden w-full h-auto"
+      className="col-span-4 cursor-pointer rounded-2xl border border-hero-background hover:shadow-lg hover:border-0 hover:shadow-muscle-group hover:-translate-y-1 active:translate-y-1 transition-all bg-card-background flex flex-col overflow-hidden w-full h-auto"
     >
       <div className="relative w-full aspect-video">
         <Image
@@ -43,7 +43,7 @@ const ExerciseCard = ({ exercise }: IExerciseCardProp) => {
       <div className="pt-1 px-6">
         <p className="text-global-subtitle">{exercise.equipment}</p>
       </div>
-      <div className="border-t border-global-subtitle text-global-subtitle text-xl font-semibold mx-6 mt-5 pt-3 pb-6 flex items-center gap-4">
+      <div className="border-t-2 border-hero-background text-global-subtitle text-xl font-semibold mx-6 mt-5 pt-3 pb-6 flex items-center gap-4">
         <div className="flex items-center gap-2">
           <span>
             <FaRegClock />
